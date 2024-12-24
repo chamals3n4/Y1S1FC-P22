@@ -4,18 +4,26 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import Analytics from "./pages/Analytics";
 import Chat from "./pages/Chat";
+import Login from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
     <Router>
-      <Dashboard>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/analytics" element={<Analytics />} />
-        </Routes>
-      </Dashboard>
+      <Routes>
+        {/* Private Routes */}
+        <Route path="/" element={<PrivateRoute />}>
+          <Route element={<Dashboard />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/analytics" element={<Analytics />} />
+          </Route>
+        </Route>
+
+        {/* Public Routes */}
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </Router>
   );
 }

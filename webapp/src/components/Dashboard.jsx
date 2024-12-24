@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 import {
   Home,
   Settings,
@@ -19,7 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-3;
+
 const menuItems = [
   { icon: Home, label: "Overview", to: "/" },
   { icon: BarChart, label: "Analytics", to: "/analytics" },
@@ -27,7 +27,7 @@ const menuItems = [
   { icon: Settings, label: "Settings", to: "/settings" },
 ];
 
-function Dashboard({ children }) {
+function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
@@ -82,10 +82,8 @@ function Dashboard({ children }) {
       >
         <div className="sticky top-0 z-40 border-b bg-white">
           <div className="flex h-16 items-center justify-between px-4">
-            {/* Left side (Logo) */}
-            <div>{/* Your existing logo or title */}</div>
+            <div>{/*  */}</div>
 
-            {/* Right side (Avatar with Dropdown) */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
@@ -113,7 +111,7 @@ function Dashboard({ children }) {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
-                    /* Handle Logout */
+                    /*  Logout */
                   }}
                 >
                   Logout
@@ -122,7 +120,9 @@ function Dashboard({ children }) {
             </DropdownMenu>
           </div>
         </div>
-        <div className="flex-1 overflow-auto">{children}</div>
+        <div className="flex-1 overflow-auto">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
