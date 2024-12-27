@@ -6,6 +6,7 @@ import Analytics from "./pages/Analytics";
 import Chat from "./pages/Chat";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
+import MediAlarm from "./pages/MediAlarm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/medi-alarm" element={<MediAlarm />} />
           </Route>
         </Route>
 

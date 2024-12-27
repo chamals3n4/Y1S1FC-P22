@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   MessageCircle,
   ChartScatterIcon,
+  AlarmClock,
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 const menuItems = [
   { icon: Home, label: "Overview", to: "/" },
   { icon: BarChart, label: "Analytics", to: "/analytics" },
+  { icon: AlarmClock, label: "Medication Reminder", to: "/medi-alarm" },
   { icon: MessageCircle, label: "Chat", to: "/chat" },
   { icon: Settings, label: "Settings", to: "/settings" },
 ];
@@ -76,7 +78,7 @@ function Dashboard() {
       {/* Main Content */}
       <main
         className={cn(
-          "flex-1 transition-all duration-300",
+          "flex-1 transition-all duration-300 bg-pagebg",
           collapsed ? "ml-16" : "ml-64"
         )}
       >

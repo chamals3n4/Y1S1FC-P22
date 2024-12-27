@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import supabase from "@/config/supabase";
 
 const stats = [
   {
@@ -46,7 +47,7 @@ export default function Home() {
   return (
     <div className="flex-1 bg-pagebg space-y-4 p-8 pt-6">
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">
+        <h2 className="text-3xl font-serif tracking-tight">
           Welcome Chamal Senarathna 👋🏻
         </h2>
         <p className="text-muted-foreground">

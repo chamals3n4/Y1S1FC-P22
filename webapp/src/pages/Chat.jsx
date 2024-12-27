@@ -50,15 +50,16 @@ export default function Chat() {
                   <AvatarImage
                     src="https://github.com/shadcn.png"
                     alt="@shadcn"
+                    draggable="false"
                   />
                   <AvatarFallback>MC</AvatarFallback>
                 </Avatar>
               </div>
-              <h1 className="text-2xl font-bold mb-2">
+              <h1 className="text-2xl  font-serif  mb-2">
                 Welcome to Medical Chat
               </h1>
               <p className="text-muted-foreground mb-4">
-                Ask anything about medical situations
+                Ask anything about your medical conditions
               </p>
               <p className="text-sm text-muted-foreground max-w-md">
                 Please note: This chat provides general information and is not a

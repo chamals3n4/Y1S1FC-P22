@@ -4,6 +4,9 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+import { useToast } from "@/hooks/use-toast";
+
 import LoginImg from "../assets/images/login-img.webp";
 
 import { useNavigate } from "react-router-dom";
@@ -15,6 +18,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +32,17 @@ export default function Login() {
 
     if (error) {
       setError(error.message);
+      toast({
+        variant: "destructive",
+        title: "Invalid login credentials",
+        // description: "There was a problem with your request.",
+      });
     } else {
-      //alert("Logged in successfully", user);
-      // toast.success(`Logged in successfully.`);
+      toast({
+        variant: "success",
+        title: "Login Successfully",
+        // description: "There was a problem with your request.",
+      });
       setTimeout(() => {
         navigate("/");
       }, 2000);
@@ -65,6 +77,7 @@ export default function Login() {
             />
           </div>
         </div>
+        <Label>Image Credit - OpenAI</Label>
       </div>
       <div className="relative hidden bg-muted lg:block">
         <img
@@ -96,7 +109,7 @@ function LoginForm({
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-2xl font-bold">Login to your account</h1>
+        <h1 className="text-2xl font-serif ">Login to your account</h1>
         <p className="text-balance text-sm text-muted-foreground">
           Enter your email below to login to your account
         </p>
@@ -138,7 +151,7 @@ function LoginForm({
         >
           {loading ? "Logging in..." : "Login"}
         </Button>
-        {error && <p className="text-red-500">{error}</p>}
+        {/* {error && <p className="text-red-500">{error}</p>} */}
         {/* <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
           <span className="relative z-10 bg-background px-2 text-muted-foreground">
             Or continue with
