@@ -43,11 +43,11 @@ export default function MediAlarm() {
           />
           <div>
             <h1 className="text-lg text-white font-bold">
-              Introducing the Choreo extension for Visual Studio Code
+              Stay on Track with Your Medications
             </h1>
             <p className="text-sm text-white text-muted-foreground">
-              You can now build, deploy, test, monitor and troubleshoot your
-              cloud apps directly from VS Code.
+              Maintain your health with our medication reminder. Set up your
+              routines and get timely reminders to ensure you never miss a dose.
             </p>
           </div>
         </div>

@@ -50,9 +50,6 @@ export default function Home() {
         <h2 className="text-3xl font-serif tracking-tight">
           Welcome Chamal Senarathna 👋🏻
         </h2>
-        <p className="text-muted-foreground">
-          This is the home page of your dashboard.
-        </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (

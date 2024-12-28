@@ -122,7 +122,7 @@ export function MedicationRoutingDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">Add Medication Routing</Button>
+        <Button className="bg-red-500">Add Medication Routing</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto  scroll-smooth">
         <DialogHeader>

@@ -9,6 +9,8 @@ import {
   MessageCircle,
   ChartScatterIcon,
   AlarmClock,
+  ChartLine,
+  ChartNoAxesGantt,
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { Button } from "@/components/ui/button";
@@ -22,8 +24,8 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const menuItems = [
-  { icon: Home, label: "Overview", to: "/" },
-  { icon: BarChart, label: "Analytics", to: "/analytics" },
+  { icon: ChartNoAxesGantt, label: "Overview", to: "/" },
+  { icon: ChartLine, label: "Analytics", to: "/analytics" },
   { icon: AlarmClock, label: "Medication Reminder", to: "/medi-alarm" },
   { icon: MessageCircle, label: "Chat", to: "/chat" },
   { icon: Settings, label: "Settings", to: "/settings" },
