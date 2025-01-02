@@ -5,7 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { addDays } from "date-fns";
 import Reminder from "../assets/images/Reminder.png";
 import { MedicationRoutingDialog } from "../components/MedicationRoutingDialog";
-import { fetchMedicationRoutings } from "@/supabase/fetchMedicationRoutings";
+// import { fetchMedicationRoutings } from "@/supabase/fetchMedicationRoutings";
 
 export default function MediAlarm() {
   const [cards, setCards] = useState([]);

@@ -1,29 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import supabase from "@/config/supabase";
-
-const stats = [
-  {
-    name: "Latest Pulse Reading",
-    value: "85 bpm",
-    change: "+20.1% from last month",
-  },
-  {
-    name: " Body Temperature",
-    value: "37.2°C",
-    change: "+20.1% from last month",
-  },
-  {
-    name: "Health Status Summary",
-    value: "Normal",
-    change: "+20.1% from last month",
-  },
-  {
-    name: "Data Uptime or Reliability",
-    value: "+467",
-    change: "+20.1% from last month",
-  },
-];
+import { useBpmData } from "@/hooks/useBpmData";
 
 const activities = [
   {
@@ -44,6 +21,30 @@ const activities = [
 ];
 
 export default function Home() {
+  const bpmData = useBpmData();
+  const stats = [
+    {
+      name: "Latest Pulse Reading",
+      value: bpmData.length > 0 ? `${bpmData[0].bpm} BPM` : "Loading...",
+      change: "+20.1% from last month",
+    },
+    {
+      name: " Next Dosage",
+      value: "37.2°C",
+      change: "+20.1% from last month",
+    },
+    {
+      name: "Health Status Summary",
+      value: "Normal",
+      change: "+20.1% from last month",
+    },
+    {
+      name: "Data Uptime or Reliability",
+      value: "+467",
+      change: "+20.1% from last month",
+    },
+  ];
+
   return (
     <div className="flex-1 bg-pagebg space-y-4 p-8 pt-6">
       <div className="space-y-2">
